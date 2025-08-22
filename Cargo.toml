@@ -2,6 +2,12 @@
 name = "sig_rp2040_interface"
 version = "0.1.0"
 edition = "2021"
+license = "MIT"
+description = "Communicate with FW_LED_Matrix_Firmware"
+repository = "https://github.com/sigroot/FW_LED_Matrix_Interface"
+readme = "README.md"
+keywords = ["framework", "ledmatrix", "firmware"]
+categories = ["graphics", "parsing"]
 
 [dependencies]
 serialport = "4.6.1"
