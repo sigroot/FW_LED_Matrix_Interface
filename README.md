@@ -13,44 +13,55 @@ led_matrix_port: a SerialPort representing the port of the LED matrix
 
 Returns a new LedMatrixInterface struct with a port automatically discovered by get_matrix_port(). baud_rate is the rate of communication with the LED matrix when discovering a port (default: 1000000). timeout is the duration in milliseconds before returning an error when discovering a port (default: 10000).
 
+
 >new_manual(port_name: &str, baud_rate: u32, timeout: u64) -> Self
 
 Returns a new LedMatrixInterface struct with a manually entered port name. baud_rate is the rate of communication with the LED matrix when discovering a port (default: 1000000). timeout is the duration in milliseconds before returning an error when discovering a port (default: 10000).
+
 
 >set_pwm(&mut self, input_matrix: &[[u8; 9]; 34])
 
 Sets the struct's pwm_matrix to a copy of input_matrix.
 
+
 >set_scale(&mut self, input_matrix: &[[u8; 9]; 34])
 
 Sets the struct's scale_matrix to a copy of input_matrix.
+
 
 >write_pwm(&mut self)
 
 Writes the struct's pwm_matrix to the LED matrix's PWM matrix. May panic.
 
+
 >write_scale(&mut self)
 
 Writes the struct's scale_matrix to the LED matrix's scale matrix. May panic.
+
 
 >write(&mut self)
 
 Performs both write_pwm() and write_scale().
 
+
 >set_port(&mut self, baud_rate: u32, timeout: u64) -> Result<(), Error>
 
 Resets the LedMatrixInterface struct's port automatically. baud_rate is the rate of communication with the LED matrix when discovering a port (default: 1000000). timeout is the duration in milliseconds before returning an error when discovering a port (default: 10000).
+
 
 >set_port_manual(&mut self, port_name: &str, baud_rate: u32, timeout: u64) -> Result<(), serialport::Error>
 
 Resets the LedMatrixInterface struct's port with a manually entered port name. baud_rate is the rate of communication with the LED matrix when discovering a port (default: 1000000). timeout is the duration in milliseconds before returning an error when discovering a port (default: 10000).
 
+
 >pub fn flush_operation(&mut self, bytes: u32)
 Writes bytes-number of null operations to the LED matrix.
 ### Functions
+
 >get_ports() -> Option<Vec<serialport::SerialPortInfo>>
 
 Returns a list of all available ports with names containing "COM" or "ACM".
+
 
 >get_matrix_port(baud_rate: u32, timeout: u64) -> Result<Box<dyn serialport::SerialPort>, Error>
 
