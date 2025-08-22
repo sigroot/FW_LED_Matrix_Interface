@@ -10,6 +10,7 @@ scale_matrix: a 9x34 u8 2D-array representing the next scale to be written
 led_matrix_port: a SerialPort representing the port of the LED matrix
 ### Methods
 >new(baud_rate: u32, timeout: u64) -> Self
+
 Returns a new LedMatrixInterface struct with a port automatically discovered by get_matrix_port(). baud_rate is the rate of communication with the LED matrix when discovering a port (default: 1000000). timeout is the duration in milliseconds before returning an error when discovering a port (default: 10000).
 
 >new_manual(port_name: &str, baud_rate: u32, timeout: u64) -> Self
