@@ -45,6 +45,7 @@ Resets the LedMatrixInterface struct's port automatically. baud_rate is the rate
 Resets the LedMatrixInterface struct's port with a manually entered port name. baud_rate is the rate of communication with the LED matrix when discovering a port (default: 1000000). timeout is the duration in milliseconds before returning an error when discovering a port (default: 10000).
 
 >pub fn flush_operation(&mut self, bytes: u32)
+
 Writes bytes-number of null operations to the LED matrix.
 ### Functions
 >get_ports() -> Option<Vec<serialport::SerialPortInfo>>
