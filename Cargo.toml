@@ -1,6 +1,6 @@
 [package]
 name = "sig_rp2040_interface"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 license = "MIT"
 description = "Communicate with FW_LED_Matrix_Firmware"
