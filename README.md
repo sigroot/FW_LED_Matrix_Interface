@@ -2,15 +2,17 @@
 ## Preamble
 **THIS IS UNOFFICIAL SOFTWARE. I AM NOT AFFILIATED WITH FRAMEWORK**
 
-This repository contains a rust library for communicating with a [Framework LED Matrix](https://frame.work/products/16-led-matrix) which is loaded with the custom [FW_LED_Matrix_Firmware](https://github.com/sigroot/FW_LED_Matrix_Firmware). 
+This repository contains a rust library for communicating with a [Framework LED Matrix](https://frame.work/products/16-led-matrix).
+
+This repository requires the custom [FW_LED_Matrix_Firmware](https://github.com/sigroot/FW_LED_Matrix_Firmware). 
 ## Capabilities
-This library contains an LedMatrixInterface struct which can either connect automatically with an installed [Framework LED Matrix](https://frame.work/products/16-led-matrix) or manually receive a LED matrix's port name in the form of a &str. When the LedMatrixInterface struct is created, it confirms that the firmware is correct and communicating. The LedMatrixInterface struct contains two 9x34 u8 2D-arrays. These correspond to the LED matrix's PWM and scale values. The arrays can be set separately or written to the LED matrix either separately or together. Should a write to the LED matrix fail, the struct can flush the LED matrix's read buffer.
+This library contains an LedMatrixInterface struct which can either connect automatically with a [Framework LED Matrix](https://frame.work/products/16-led-matrix) that is installed with the [FW_LED_Matrix_Firmware](https://github.com/sigroot/FW_LED_Matrix_Firmware), or manually receive an LED matrix's port name in the form of a &str. When the LedMatrixInterface struct is created, it confirms that the firmware is correct and communicating. The LedMatrixInterface struct contains two 9x34 u8 2D-arrays. These correspond to the LED matrix's PWM and scale values. The arrays can be set separately or written to the LED matrix either separately or together. Should a write to the LED matrix fail, the struct can flush the LED matrix's read buffer.
 ### Associated Software
 [FW_LED_Matrix_Firmware](https://github.com/sigroot/FW_LED_Matrix_Firmware) is Arduino-based firmware and is a prerequisite installation for this library.
 
 [FW_LED_Matrix_Board](https://github.com/sigroot/FW_LED_Matrix_Board) divides the 9x34 LED Matrix into 3 smaller 9x11 "applets" and provides a language agnostic interface between these applets and other programs.
 
-[FW_LED_Matrix_Applet](https://github.com/sigroot/FW_LED_Matrix_Applet) is a Rust Library for interfacing between Rust programs and [FW_LED_Matrix_Board](https://github.com/sigroot/FW_LED_Matrix_Board).
+[FW_LED_Applet_Interface](https://github.com/sigroot/FW_LED_Applet_Interface) is a Rust Library for interfacing between Rust programs and [FW_LED_Matrix_Board](https://github.com/sigroot/FW_LED_Matrix_Board).
 ## Usage
 ### LedMatrixInterface Struct
 pwm_matrix: a 9x34 u8 2D-array representing the next PWM to be written
